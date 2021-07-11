@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_nav_graph"
+    app:startDestination="@id/screenLoadFragment">
+
+    <fragment
+        android:id="@+id/screenLoadFragment"
+        android:name="com.digirr.fitdiet.ScreenLoadFragment"
+        android:label="fragment_screen_load"
+        tools:layout="@layout/fragment_screen_load" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.digirr.fitdiet.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.digirr.fitdiet.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
+</navigation>

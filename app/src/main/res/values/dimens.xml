@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_margin">15dp</dimen>
+
+    <!-- Sign in dimens -->
+    <dimen name="sign_in_textView">35sp</dimen>
+    <dimen name="view_padding">10dp</dimen>
+    <dimen name="view_margin">15dp</dimen>
+    <dimen name="view_big_margin">50dp</dimen>
+    <dimen name="big_swipe_padding">40dp</dimen>
+
+    <!-- Single row dimens -->
+    <dimen name="title_textSize">20sp</dimen>
+
+
+    <!-- ********************************
+            SIGN UP DIMENS
+    ******************************** -->
+    <dimen name="sign_up_textView">35sp</dimen>
+    <dimen name="tv_sign_up_margin_top">40dp</dimen>
+
+
+    <!-- ********************************
+        PROFILE PAGE DIMENS
+    ******************************** -->
+    <dimen name="rl_profile_page_margin_start">20dp</dimen>
+
+    <!-- ********************************
+    MAIN PAGE DIMENS
+******************************** -->
+    <dimen name="rv_main_page_margin">20dp</dimen>
+</resources>

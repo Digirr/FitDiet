@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">FitDiet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Loggin in panel -->
+    <string name="log_in_text">Zaloguj się</string>
+    <string name="log_in_email_hint">E-mail</string>
+    <string name="log_in_password_hint">Hasło</string>
+    <string name="sign_in_button">Zaloguj</string>
+    <string name="sign_up_button">Rejestracja</string>
+    <!-- Register panel -->
+    <string name="register_button">Zarejestruj</string>
+    <string name="register_textView">Zarejestruj się</string>
+    <string name="repeat_register_password_hint">Powtórz hasło</string>
+    <string name="log_in_nick_hint">Nick</string>
+
 </resources>
