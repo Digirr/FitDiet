@@ -30,4 +30,14 @@
     MAIN PAGE DIMENS
 ******************************** -->
     <dimen name="rv_main_page_margin">20dp</dimen>
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="bigMargin">25dp</dimen>
+    <dimen name="smallMargin">5dp</dimen>
+    <dimen name="smallTextSize">10sp</dimen>
+    <dimen name="mediumTextSize">16sp</dimen>
+    <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="titleTextSize">30sp</dimen>
+
 </resources>

@@ -1,7 +1,8 @@
-package com.digirr.fitdiet
+package com.digirr.fitdiet.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.digirr.fitdiet.R
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

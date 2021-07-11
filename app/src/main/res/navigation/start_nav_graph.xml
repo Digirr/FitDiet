@@ -7,17 +7,34 @@
 
     <fragment
         android:id="@+id/screenLoadFragment"
-        android:name="com.digirr.fitdiet.ScreenLoadFragment"
+        android:name="com.digirr.fitdiet.loadingscreen.ScreenLoadFragment"
         android:label="fragment_screen_load"
-        tools:layout="@layout/fragment_screen_load" />
+        tools:layout="@layout/fragment_screen_load" >
+        <action
+            android:id="@+id/action_screenLoadFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.digirr.fitdiet.Login"
+        android:name="com.digirr.fitdiet.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_registration"
+            app:destination="@id/registration" />
+    </fragment>
     <fragment
         android:id="@+id/registration"
-        android:name="com.digirr.fitdiet.Registration"
+        android:name="com.digirr.fitdiet.registration.RegistrationFragment"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" />
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_calculator"
+            app:destination="@id/calculator" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculator"
+        android:name="com.digirr.fitdiet.Calculator"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
 </navigation>
