@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addproduct_nav_graph"
+    app:startDestination="@id/productFinderFragment">
+
+    <fragment
+        android:id="@+id/productFinderFragment"
+        android:name="com.digirr.fitdiet.productfinder.ProductFinderFragment"
+        android:label="fragment_product_finder"
+        tools:layout="@layout/fragment_product_finder" >
+        <action
+            android:id="@+id/action_productFinderFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.digirr.fitdiet.additem.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_to_productFinderFragment"
+            app:destination="@id/productFinderFragment" />
+    </fragment>
+</navigation>

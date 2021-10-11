@@ -27,7 +27,7 @@ class ScreenLoadFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         GlobalScope.launch(Dispatchers.Main) {
             delay(2000L)
-            findNavController().navigate(ScreenLoadFragmentDirections.actionScreenLoadFragmentToLogin())
+            findNavController().navigate(ScreenLoadFragmentDirections.actionScreenLoadFragmentToCalculator())
         }
     }
 

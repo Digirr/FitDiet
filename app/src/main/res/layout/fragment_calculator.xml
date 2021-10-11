@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/calculatorTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/calculator"
@@ -25,7 +25,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/giveDataTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -35,7 +35,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/genderTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -45,13 +45,13 @@
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/radiogroup"
+                android:id="@+id/genderRG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton1"
+                    android:id="@+id/womenRB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
@@ -59,7 +59,7 @@
                     android:text="@string/female" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/manRB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
@@ -67,7 +67,7 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/ageTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -77,17 +77,16 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/ageET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/giveAge"
-                android:inputType="phone"
-                android:text="@{viewModel.age}" />
+                android:inputType="phone" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/heightTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -97,17 +96,17 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/heightET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/giveHeight"
                 android:inputType="phone"
-                android:text="@{viewModel.height}" />
+                android:text="" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/weightTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -117,17 +116,16 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/giveWeightET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/giveWeight"
-                android:inputType="phone"
-                android:text="@{viewModel.weight}" />
+                android:inputType="phone" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/activityLvlTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -137,14 +135,14 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/spinnerActivityLvl"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginTop="@dimen/smallMargin"
                 android:background="@color/white"/>
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/goalTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -154,7 +152,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spinnerGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginTop="@dimen/smallMargin"
@@ -168,7 +166,7 @@
                 android:layout_marginTop="@dimen/bigMargin">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/saveCalculatorDataButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"

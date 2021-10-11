@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.digirr.fitdiet.R
 import com.digirr.fitdiet.abstraction.AbstractFragment
 import com.google.android.material.snackbar.Snackbar
@@ -48,7 +49,8 @@ class RegistrationFragment : AbstractFragment() {
                                     nick,
                                     authRes.user!!.email)
                                 regViewModel.createNewUser(user)    //Utworzenie powiazanego konta w bazie danych
-                                startMainViewApp()
+                               // findNavController().navigate(RegistrationFragmentDirections.actionRegistrationToCalculator().actionId)
+//                                startMainViewApp()
                             }
                         }
                         .addOnFailureListener {

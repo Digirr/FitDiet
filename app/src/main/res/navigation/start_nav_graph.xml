@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_screenLoadFragment_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_screenLoadFragment_to_calculator"
+            app:destination="@id/calculator" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -34,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/calculator"
-        android:name="com.digirr.fitdiet.Calculator"
+        android:name="com.digirr.fitdiet.calculator.CalculatorFragment"
         android:label="fragment_calculator"
         tools:layout="@layout/fragment_calculator" />
 </navigation>
