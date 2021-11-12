@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_registration.xml" value="0.2838541666666667" />
+        <entry key="app/src/main/res/layout/fragment_screen_load.xml" value="0.23489583333333333" />
       </map>
     </option>
   </component>

@@ -15,6 +15,9 @@
     <string name="register_textView">Zarejestruj się</string>
     <string name="repeat_register_password_hint">Powtórz hasło</string>
     <string name="log_in_nick_hint">Nick</string>
+    <!-- Profile panel -->
+    <string name="calculate_calories_again">Oblicz ponownie kalorie</string>
+    <string name="change_profile_data">Zmień dane profilu</string>
 
 
     <!-- Calculator view -->
@@ -47,6 +50,17 @@
         <item>Chcę utrzymać wagę</item>
         <item>Rekompozycja (wzrost mięśni i spalanie tłuszczu)</item>
     </string-array>
+    <string name="incorrect_age">Wiek pusty lub wprowadzony nieprawidłowo</string>
+    <string name="below_value_age">Wiek musi być poniżej 120 lat</string>
+    <string name="at_least_value_age">Musisz mieć co najmniej 16 lat</string>
+    <string name="incorrect_height">Wzrost pusty lub wprowadzony nieprawidłowo</string>
+    <string name="below_value_height">Wzrost musi być wynosić poniżej 220 cm</string>
+    <string name="at_least_value_height">Minimalny wzrost wynosi 120 cm</string>
+    <string name="incorrect_weight">Waga pusta lub wprowadzona nieprawidłowo</string>
+    <string name="below_value_weight">Waga musi być wynosić poniżej 800 kg</string>
+    <string name="at_least_value_weight">Minimalna waga wynosi 40 kg</string>
+
+
 
 
 </resources>

@@ -91,5 +91,4 @@
         android:text="@string/register_button"
         android:textColor="@android:color/white" />
 
-
 </LinearLayout>

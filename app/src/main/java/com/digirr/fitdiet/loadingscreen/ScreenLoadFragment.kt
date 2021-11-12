@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.digirr.fitdiet.R
+import com.digirr.fitdiet.abstraction.AbstractFragment
 import com.squareup.okhttp.Dispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class ScreenLoadFragment : Fragment() {
+class ScreenLoadFragment : AbstractFragment() { //Tu zmienione na abstract chwilowo
 
 
     override fun onCreateView(
@@ -27,7 +28,8 @@ class ScreenLoadFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         GlobalScope.launch(Dispatchers.Main) {
             delay(2000L)
-            findNavController().navigate(ScreenLoadFragmentDirections.actionScreenLoadFragmentToCalculator())
+            findNavController().navigate(ScreenLoadFragmentDirections.actionScreenLoadFragmentToLogin())
+            //startMainViewApp()
         }
     }
 

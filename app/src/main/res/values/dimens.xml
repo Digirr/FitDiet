@@ -22,13 +22,13 @@
 
 
     <!-- ********************************
-        PROFILE PAGE DIMENS
+             PROFILE PAGE DIMENS
     ******************************** -->
     <dimen name="rl_profile_page_margin_start">20dp</dimen>
 
     <!-- ********************************
-    MAIN PAGE DIMENS
-******************************** -->
+            MAIN PAGE DIMENS
+    ******************************** -->
     <dimen name="rv_main_page_margin">20dp</dimen>
 
 
@@ -38,6 +38,7 @@
     <dimen name="smallTextSize">10sp</dimen>
     <dimen name="mediumTextSize">16sp</dimen>
     <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="veryLargeTextSize">25sp</dimen>
     <dimen name="titleTextSize">30sp</dimen>
 
 </resources>

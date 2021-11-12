@@ -16,8 +16,6 @@ class CalculatorFragment : AbstractFragment() {
 
     private val calcVM by viewModels<CalculatorViewModel>()
 
-
-    //Tworzenie elementow
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_calculator, container, false)
     }
@@ -34,8 +32,6 @@ class CalculatorFragment : AbstractFragment() {
           }
         }
     }
-
-
 
     private fun createSpinners() {
         ArrayAdapter.createFromResource(requireContext(), R.array.activityLvl_array, android.R.layout.simple_spinner_item)

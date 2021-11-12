@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:paddingTop="@dimen/view_padding"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/fragment_margin">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/veryLargeTextSize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="@dimen/view_padding"
+            android:text="@string/change_profile_data" />
+
+        <Button
+            android:id="@+id/calc_again_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mediumTextSize"
+            android:padding="@dimen/rv_main_page_margin"
+            android:text="@string/calculate_calories_again" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/veryLargeTextSize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/view_padding"
+            android:paddingBottom="@dimen/view_padding"
+            android:text="@string/log_in_nick_hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nick_change_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/log_in_nick_hint"
+                android:inputType="textNoSuggestions" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/veryLargeTextSize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/view_padding"
+            android:paddingBottom="@dimen/view_padding"
+            android:text="@string/log_in_email_hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/big_swipe_padding"
+            android:layout_marginTop="@dimen/view_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_change_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/log_in_email_hint"
+            android:inputType="textNoSuggestions" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_new_profile_data_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mediumTextSize"
+            android:padding="@dimen/rv_main_page_margin"
+            android:layout_marginBottom="@dimen/big_swipe_padding"
+            android:text="@string/save" />
+
+    </LinearLayout>
+</ScrollView>

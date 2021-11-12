@@ -28,10 +28,7 @@ class RegistrationFragment : AbstractFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registerUserClick()
-    }
 
-    private fun registerUserClick() {
         loginRegButton.setOnClickListener {
             val nick = nick_reg_editText.text?.trim().toString()
             val email = email_reg_editText.text?.trim().toString()
@@ -49,7 +46,7 @@ class RegistrationFragment : AbstractFragment() {
                                     nick,
                                     authRes.user!!.email)
                                 regViewModel.createNewUser(user)    //Utworzenie powiazanego konta w bazie danych
-                               // findNavController().navigate(RegistrationFragmentDirections.actionRegistrationToCalculator().actionId)
+                                findNavController().navigate(RegistrationFragmentDirections.actionRegistrationToCalculator().actionId)
 //                                startMainViewApp()
                             }
                         }
@@ -67,6 +64,5 @@ class RegistrationFragment : AbstractFragment() {
 
         }
     }
-
 
 }

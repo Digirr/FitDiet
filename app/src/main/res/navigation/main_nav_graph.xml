@@ -26,5 +26,14 @@
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
         android:name="com.digirr.fitdiet.profile.ProfileFragment"
-        android:label="fragment_profile" />
+        android:label="fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.digirr.fitdiet.calculator.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
 </navigation>
