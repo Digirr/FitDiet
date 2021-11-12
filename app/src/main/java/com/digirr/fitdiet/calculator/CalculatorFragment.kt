@@ -1,10 +1,12 @@
 package com.digirr.fitdiet.calculator
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.RadioButton
 import androidx.fragment.app.viewModels
 import com.digirr.fitdiet.R
 import com.digirr.fitdiet.abstraction.AbstractFragment
@@ -25,13 +27,14 @@ class CalculatorFragment : AbstractFragment() {
         createSpinners()
 
         saveCalculatorDataButton.setOnClickListener {
-          val result = calcVM.assignFieldsToTheUser(ageET, heightET, giveWeightET, spinnerActivityLvl, spinnerGoal)
+          val result = calcVM.assignFieldsToTheUser(view, ageET, heightET, giveWeightET, spinnerActivityLvl, spinnerGoal, genderRG)
 
           if(result) {
               startMainViewApp()
           }
         }
     }
+
 
 
     private fun createSpinners() {
