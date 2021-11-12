@@ -1,22 +1,19 @@
 package com.digirr.fitdiet.calculator
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.digirr.fitdiet.R
 import com.digirr.fitdiet.abstraction.AbstractFragment
-import com.digirr.fitdiet.registration.RegistrationViewModel
 import kotlinx.android.synthetic.main.fragment_calculator.*
 
 class CalculatorFragment : AbstractFragment() {
 
     private val calcVM by viewModels<CalculatorViewModel>()
+
 
     //Tworzenie elementow
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -28,10 +25,11 @@ class CalculatorFragment : AbstractFragment() {
         createSpinners()
 
         saveCalculatorDataButton.setOnClickListener {
+          val result = calcVM.assignFieldsToTheUser(ageET, heightET, giveWeightET, spinnerActivityLvl, spinnerGoal)
 
-            calcVM.assignFieldsToTheUser(genderRG, ageET, heightET, giveWeightET, spinnerActivityLvl, spinnerGoal)
-
-            startMainViewApp()
+          if(result) {
+              startMainViewApp()
+          }
         }
     }
 
