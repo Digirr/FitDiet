@@ -36,6 +36,7 @@
     <string name="activityLvl">Jaki jest Twój poziom aktywności</string>
     <string name="goal">Jaki jest twój cel</string>
     <string name="save">Zapisz</string>
+    <string name="logout">Wyloguj</string>
     <string-array name="activityLvl_array">
         <item>Brak aktywności, praca siedząca</item>
         <item>Praca siedząca i 1-2 treningi w tygodniu</item>

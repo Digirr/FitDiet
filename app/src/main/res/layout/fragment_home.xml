@@ -202,6 +202,14 @@
                 android:textSize="18sp"
                 android:textStyle="italic|bold" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Przytrzymaj, aby usunąć z listy)"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="italic|bold" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerEatenProducts"
                 android:layout_width="match_parent"

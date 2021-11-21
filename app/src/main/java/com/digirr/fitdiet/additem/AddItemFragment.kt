@@ -16,6 +16,7 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.digirr.fitdiet.R
+import com.digirr.fitdiet.abstraction.AbstractFragment
 import com.digirr.fitdiet.loadingscreen.ScreenLoadFragmentDirections
 import com.digirr.fitdiet.productfinder.ProductFinderFragmentDirections
 import kotlinx.android.synthetic.main.fragment_add_item.*
@@ -31,7 +32,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.random.Random
 
-class AddItemFragment : Fragment() {
+class AddItemFragment : AbstractFragment() {
 
     private val addVm by viewModels<AddItemViewModel>()
     private val RESULT_LOAD_IMAGE = 100
@@ -52,7 +53,10 @@ class AddItemFragment : Fragment() {
             startActivityForResult(gallery, RESULT_LOAD_IMAGE)
         }
         addProductButton.setOnClickListener {
-            addVm.addProductUserClick(titleAddET, addDescriptionET, allKcalET, proteinET, carbohydratesET, fatET, productSingleImage)
+            var returnValue = addVm.addProductUserClick(titleAddET, addDescriptionET, allKcalET, proteinET, carbohydratesET, fatET, productSingleImage)
+            if(returnValue) {
+                startMainViewApp()
+            }
         }
 
     }

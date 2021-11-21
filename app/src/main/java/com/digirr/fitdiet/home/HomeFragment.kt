@@ -43,7 +43,7 @@ class HomeFragment : Fragment(), OnProductItemClick {
         homeVm.user.observe(viewLifecycleOwner, { user ->
             bindUserData(user)
         })
-        homeVm.products.observe(viewLifecycleOwner, { list ->
+        homeVm.eatenProducts.observe(viewLifecycleOwner, { list ->
             adapter.setProducts(list)
         })
     }
@@ -67,8 +67,9 @@ class HomeFragment : Fragment(), OnProductItemClick {
     }
 
     override fun onProductLongClick(product: FoodProduct, position: Int) {
-        homeVm.addEatenProduct(product) //Tu powinno byc usuwanie a nie dodawanie
-        Toast.makeText(requireContext(), "Usunięto spożyty produkt", Toast.LENGTH_SHORT).show()
+        homeVm.removeEatenProduct(product)
+        adapter.removeProduct(product, position)
+        Toast.makeText(requireContext(), "Usunięto z listy spożytych produktów", Toast.LENGTH_SHORT).show()
     }
 
     override fun onProductShortClick(product: FoodProduct, position: Int) {

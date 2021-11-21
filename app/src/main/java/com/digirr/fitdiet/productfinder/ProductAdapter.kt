@@ -48,7 +48,7 @@ class ProductAdapter(private val listener: OnProductItemClick) : RecyclerView.Ad
         val fat = holder.itemView.findViewById<TextView>(R.id.fatItem)
         val image = holder.itemView.findViewById<ImageView>(R.id.productImage)
 
-        topic.text = (topic.text.toString() + " " + productsList[holder.adapterPosition].productName)
+        topic.text = "  " + productsList[holder.adapterPosition].productName
         allKcal.text = (allKcal.text.toString() + " " + productsList[holder.adapterPosition].allKcal)
         carbohydrates.text = (carbohydrates.text.toString() + " " + productsList[holder.adapterPosition].carbohydrates)
         protein.text = (protein.text.toString() + " " + productsList[holder.adapterPosition].protein)

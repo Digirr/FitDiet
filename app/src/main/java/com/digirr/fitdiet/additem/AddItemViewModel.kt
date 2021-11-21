@@ -45,7 +45,7 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
         carbohydratesET : EditText,
         fatET : EditText,
         productSingleImage : ImageView
-    ) {
+    ) : Boolean {
         val title = titleAddET.text.toString()
         val description = addDescriptionET.text.toString()
 
@@ -55,7 +55,6 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
             val carbohydrates = Integer.parseInt(carbohydratesET.text.toString())
             val fat = Integer.parseInt(fatET.text.toString())
 
-
             if(validData(title, description, allKcal, protein, carbohydrates, fat, productSingleImage)) {
                 val foodProduct = FoodProduct(
                     byteArray.toString(), "", title, description, allKcal, protein, carbohydrates, fat
@@ -63,10 +62,12 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
                 addProduct(foodProduct)
                 uploadProductImage(byteArray!!)
                 showToast(getStringFromResources(R.string.product_or_incorrect))
+                return true
             }
         } catch (e : NumberFormatException) {
             showToast(getStringFromResources(R.string.values_format_incorrect))
         }
+        return false
     }
 
     private fun validData(title: String, description: String, allKcal : Int, protein : Int, carbohydrates : Int, fat : Int, productSingleImage: ImageView) : Boolean {
@@ -92,7 +93,6 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
             showToast(getStringFromResources(R.string.fat_empty_or_incorrect))
             return false
         } else {
-            showToast("Poszlo!");
             return true
         }
     }

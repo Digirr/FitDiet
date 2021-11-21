@@ -88,8 +88,17 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/mediumTextSize"
             android:padding="@dimen/rv_main_page_margin"
-            android:layout_marginBottom="@dimen/big_swipe_padding"
+            android:layout_marginBottom="@dimen/rl_profile_page_margin_start"
             android:text="@string/save" />
 
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mediumTextSize"
+            android:padding="@dimen/rv_main_page_margin"
+            android:layout_marginBottom="@dimen/big_swipe_padding"
+            android:text="@string/logout" />
     </LinearLayout>
 </ScrollView>

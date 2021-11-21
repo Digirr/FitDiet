@@ -10,6 +10,10 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
 
     val user = fbRepo.getUserData()
 
+    fun logoutUser() {
+        fbRepo.logoutUser()
+    }
+
     fun editProfileData(map: Map<String, String>) {
         fbRepo.updateProfileValues(map)
     }

@@ -137,4 +137,38 @@ class FirebaseModel {
             }
     }
 
+    fun logoutUser() {
+        fbAuth.signOut()
+    }
+
+    fun getEatenProducts(list : List<String>?) : LiveData<List<FoodProduct>> {
+        val cloudResult = MutableLiveData<List<FoodProduct>>()
+
+        if(!list.isNullOrEmpty()) {
+            fbCloud.collection("foodProducts")
+                .whereIn("id", list)
+                .get()
+                .addOnSuccessListener {
+                    val resultList = it.toObjects(FoodProduct::class.java)
+                    cloudResult.postValue(resultList)
+                }
+                .addOnFailureListener {
+                    Log.d(REPO_DEBUG, it.message.toString())
+                }
+        }
+        return cloudResult
+    }
+
+    fun removeEatenProduct(product : FoodProduct) {
+        fbCloud.collection("users")
+            .document(fbAuth.currentUser?.uid!!)
+            .update("eatenProducts", FieldValue.arrayRemove(product.id))
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "Usunięto produkt z listy")
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
 }

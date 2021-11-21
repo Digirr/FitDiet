@@ -1,5 +1,6 @@
 package com.digirr.fitdiet.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.digirr.fitdiet.R
+import com.digirr.fitdiet.abstraction.AbstractFragment
+import com.digirr.fitdiet.activities.MainActivity
+import com.digirr.fitdiet.activities.StartActivity
 import com.digirr.fitdiet.data.User
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +21,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : AbstractFragment() {
 
     private val profileVm by viewModels<ProfileViewModel>()
     private val PROFILE_DEBUG = "PROFILE_DEBUG"
@@ -42,6 +46,10 @@ class ProfileFragment : Fragment() {
     private fun calcAgainData() {
         calc_again_button.setOnClickListener {
             findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToCalculatorFragment())
+        }
+        logout_button.setOnClickListener {
+            profileVm.logoutUser()
+            startStartViewApp()
         }
     }
 
