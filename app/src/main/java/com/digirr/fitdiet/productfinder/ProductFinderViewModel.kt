@@ -1,4 +1,8 @@
 package com.digirr.fitdiet.productfinder
 
-class ProductFinderViewModel {
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
+class ProductFinderViewModel (application: Application) : AndroidViewModel(application){
+
 }

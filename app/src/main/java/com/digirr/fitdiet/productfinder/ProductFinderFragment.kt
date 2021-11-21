@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.digirr.fitdiet.R
+import com.digirr.fitdiet.registration.RegistrationViewModel
 import kotlinx.android.synthetic.main.fragment_product_finder.*
 
 
 class ProductFinderFragment : Fragment() {
 
+    private val prodVM by viewModels<ProductFinderViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,8 +29,6 @@ class ProductFinderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         addItemButton.setOnClickListener {
-            Toast.makeText(context, "Siema", Toast.LENGTH_LONG).show()
-            addItemButton.text = "Zmienia sie"
             findNavController().navigate(ProductFinderFragmentDirections.actionProductFinderFragmentToAddItemFragment().actionId)
         }
     }

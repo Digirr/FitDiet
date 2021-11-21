@@ -60,12 +60,8 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
                 val foodProduct = FoodProduct(
                     byteArray.toString(), "", title, description, allKcal, protein, carbohydrates, fat
                 )
-                if(byteArray != null) {
-                    addProduct(foodProduct)
-                    uploadProductImage(byteArray!!)
-                } else {
-                    showToast("Bytearray sie nie zapisal")
-                }
+                addProduct(foodProduct)
+                uploadProductImage(byteArray!!)
                 showToast(getStringFromResources(R.string.product_or_incorrect))
             }
         } catch (e : NumberFormatException) {

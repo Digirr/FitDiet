@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.digirr.fitdiet.data.FoodProduct
 import com.digirr.fitdiet.data.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -91,7 +92,6 @@ class FirebaseModel {
         storage.downloadUrl
             .addOnSuccessListener {
                 updateProductPhoto(it.toString(), bytesName)
-                Log.d("SIEMA", it.toString())
             }
             .addOnFailureListener {
                 Log.d(REPO_DEBUG, it.message.toString())
@@ -106,6 +106,33 @@ class FirebaseModel {
                 Log.d(REPO_DEBUG, "UPDATE USER PHOTO!")
             }
             .addOnFailureListener{
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
+    fun getProducts(): LiveData<List<FoodProduct>> {
+        val cloudResult = MutableLiveData<List<FoodProduct>>()
+
+        fbCloud.collection("foodProducts")
+            .get()
+            .addOnSuccessListener {
+                val product = it.toObjects(FoodProduct::class.java)
+                cloudResult.postValue(product)
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+        return cloudResult
+    }
+
+    fun addEatenProduct(product : FoodProduct) {
+        fbCloud.collection("users")
+            .document(fbAuth.currentUser?.uid!!)
+            .update("eatenProducts", FieldValue.arrayUnion(product.id))
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "Produkt dodany do spożytych")
+            }
+            .addOnFailureListener {
                 Log.d(REPO_DEBUG, it.message.toString())
             }
     }

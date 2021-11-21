@@ -9,17 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.digirr.fitdiet.R
 import com.digirr.fitdiet.activities.AddProductActivity
+import com.digirr.fitdiet.data.FoodProduct
 import com.digirr.fitdiet.data.User
 import com.digirr.fitdiet.profile.ProfileViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnProductItemClick {
 
     private val homeVm by viewModels<HomeViewModel>()
+    private val adapter = ProductAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +33,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        recyclerEatenProducts.layoutManager = LinearLayoutManager(requireContext())
+        recyclerEatenProducts.adapter = adapter
         openSearcher()
     }
 
@@ -38,6 +42,9 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         homeVm.user.observe(viewLifecycleOwner, { user ->
             bindUserData(user)
+        })
+        homeVm.products.observe(viewLifecycleOwner, { list ->
+            adapter.setProducts(list)
         })
     }
 
@@ -57,6 +64,15 @@ class HomeFragment : Fragment() {
         maxCarbohydrates.text = user.maxCarbohydrates.toString()
         currentFat.text = user.eatenFat.toString()
         maxFat.text = user.maxFat.toString()
+    }
+
+    override fun onProductLongClick(product: FoodProduct, position: Int) {
+        homeVm.addEatenProduct(product) //Tu powinno byc usuwanie a nie dodawanie
+        Toast.makeText(requireContext(), "Usunięto spożyty produkt", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onProductShortClick(product: FoodProduct, position: Int) {
+        //Wejscie w szczegoly
     }
 
 }

@@ -14,8 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
-            android:id="@+id/prizeItem4"
+            android:id="@+id/allKcalItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -23,13 +24,13 @@
             android:textColor="#0272A6"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/prizeItem3"
+            app:layout_constraintBottom_toTopOf="@+id/proteinItem"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toEndOf="@+id/buildingImage" />
+            app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
-            android:id="@+id/prizeItem3"
+            android:id="@+id/proteinItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -37,13 +38,13 @@
             android:textColor="#0272A6"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/prizeItem2"
+            app:layout_constraintBottom_toTopOf="@+id/carbohydratesItem"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.107"
-            app:layout_constraintStart_toEndOf="@+id/buildingImage" />
+            app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
-            android:id="@+id/prizeItem2"
+            android:id="@+id/carbohydratesItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -51,13 +52,13 @@
             android:textColor="#0272A6"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/prizeItem"
+            app:layout_constraintBottom_toTopOf="@+id/fatItem"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.133"
-            app:layout_constraintStart_toEndOf="@+id/buildingImage" />
+            app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <ImageView
-            android:id="@+id/buildingImage"
+            android:id="@+id/productImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,12 +78,12 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.611"
-            app:layout_constraintStart_toEndOf="@+id/buildingImage"
+            app:layout_constraintStart_toEndOf="@+id/productImage"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/prizeItem"
+            android:id="@+id/fatItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -93,7 +94,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.111"
-            app:layout_constraintStart_toEndOf="@+id/buildingImage" />
+            app:layout_constraintStart_toEndOf="@+id/productImage" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
