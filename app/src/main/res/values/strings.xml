@@ -50,6 +50,8 @@
         <item>Chcę utrzymać wagę</item>
         <item>Rekompozycja (wzrost mięśni i spalanie tłuszczu)</item>
     </string-array>
+
+    <!-- Validation calculator messages -->
     <string name="incorrect_age">Wiek pusty lub wprowadzony nieprawidłowo</string>
     <string name="below_value_age">Wiek musi być poniżej 120 lat</string>
     <string name="at_least_value_age">Musisz mieć co najmniej 16 lat</string>
@@ -60,7 +62,38 @@
     <string name="below_value_weight">Waga musi być wynosić poniżej 800 kg</string>
     <string name="at_least_value_weight">Minimalna waga wynosi 40 kg</string>
 
+    <!-- Validation add product messages -->
+    <string name="add_image_validator">Musisz dodać zdjęcie</string>
+    <string name="title_too_long">Tytul pusty lub za dlugi</string>
+    <string name="text_too_long">Tekst pusty lub za dlugi</string>
+
+    <string name="calories_empty_or_incorrect">Pole z kaloriami puste lub nieprawidłowe</string>
+    <string name="proteins_empty_or_incorrect">Pole z białkiem puste lub nieprawidłowe</string>
+    <string name="carbohydrates_empty_or_incorrect">Węglowodany puste lub nieprawidłowe</string>
+    <string name="fat_empty_or_incorrect">Tłuszcze puste lub nieprawidłowe</string>
+    <string name="product_or_incorrect">Produkt dodany pomyslnie</string>
+    <string name="values_format_incorrect">Format wprowadzanych liczb nieprawidłowy</string>
 
 
+
+
+    <!-- Home view -->
+    <string name="title_row">Nazwa dania</string>
+    <string name="all_kcal_all_row">Całkowite kcal:   </string>
+    <string name="kcal_all_row">Kcal:   </string>
+    <string name="protein_row">Białko:   </string>
+    <string name="carbohydrates_row">Węglowodany:   </string>
+    <string name="fat_row">Tłuszcze:   </string>
+
+    <!-- Add new product -->
+    <string name="add_description">Wprowadź opis</string>
+    <string name="description">Opis</string>
+    <string name="add_image">Dodaj zdjęcie produktu</string>
+    <string name="addButtonText">+</string>
+    <string name="addProductButton">Dodaj produkt</string>
+    <string name="kcal">Kcal</string>
+    <string name="protein">Białko</string>
+    <string name="carbohydrates">Węglowodany</string>
+    <string name="fat">Tłuszcze</string>
 
 </resources>

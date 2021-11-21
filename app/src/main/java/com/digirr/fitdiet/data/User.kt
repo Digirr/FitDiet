@@ -10,4 +10,5 @@ data class User (val uid: String? = null,
                  val eatenKcal: Int? = 0,
                  val eatenProtein: Int? = 0,
                  val eatenCarbohydrates: Int? = 0,
-                 val eatenFat: Int? = 0)
+                 val eatenFat: Int? = 0,
+                 val eatenProducts: List<String>? = null)

@@ -1,14 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".additem.AddItemFragment">
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add new item fragment" />
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        tools:context=".activities.SingleBuildingDetails">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Nazwa produktu" />
+
+        <EditText
+            android:id="@+id/titleAddET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:textSize="20dp"
+            android:inputType="textPersonName"
+            android:hint="@string/title_row" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/add_description" />
+
+        <EditText
+            android:id="@+id/addDescriptionET"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/description"
+            android:textColor="@color/grey"
+            android:inputType="textMultiLine"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/all_kcal_all_row" />
+
+        <EditText
+            android:id="@+id/allKcalET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/kcal"
+            android:inputType="phone"
+            android:textColor="@color/grey"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/protein_row" />
+
+        <EditText
+            android:id="@+id/proteinET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/protein"
+            android:inputType="phone"
+            android:textColor="@color/grey"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/carbohydrates_row" />
+
+        <EditText
+            android:id="@+id/carbohydratesET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/carbohydrates"
+            android:inputType="text"
+            android:textColor="@color/grey"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/fat_row" />
+
+        <EditText
+            android:id="@+id/fatET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/fat"
+            android:inputType="text"
+            android:textColor="@color/grey"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/add_image" />
+
+        <Button
+            android:id="@+id/addImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/bree_serif"
+            android:text="@string/addButtonText"
+            android:textColor="@color/black"
+            android:textSize="40dp" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/productSingleImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/addProductButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bree_serif"
+            android:text="@string/addProductButton"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+
+    </LinearLayout>
+</ScrollView>

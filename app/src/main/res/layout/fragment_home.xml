@@ -1,24 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home.HomeFragment">
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/openSearcherFloatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/rl_profile_page_margin_start"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/material_medium"
-        app:fabSize="normal"
-        app:layout_anchorGravity="bottom|right|end" />
-    <!-- TODO: Update blank fragment layout -->
+        android:id="@+id/RelativeLayout01">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linear1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="@string/all_kcal_all_row"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/currentKcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="0"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="/"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/maxKcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="9999"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/linear1"
+            android:id="@+id/linear2">
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="@string/protein_row"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/currentProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="0"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="/"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/maxProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="9999"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/linear2"
+            android:id="@+id/linear3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="@string/carbohydrates_row"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/currentCarbohydrates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="0"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="/"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/maxCarbohydrates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="9999"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/linear3"
+            android:id="@+id/linear4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="@string/fat_row"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/currentFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="0"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="/"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/maxFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="9dp"
+                android:text="9999"
+                android:textColor="@color/light_black"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linear4"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spożyte dania"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="italic|bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerObservedAds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-9dp"
+                android:background="@android:color/transparent"
+                tools:listitem="@layout/list_row" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/openSearcherFloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/material_medium"
+            app:fabSize="normal"
+            app:layout_anchorGravity="bottom|right|end" />
+    </RelativeLayout>
+
+</FrameLayout>

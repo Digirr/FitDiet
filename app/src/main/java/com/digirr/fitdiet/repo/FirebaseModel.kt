@@ -3,10 +3,12 @@ package com.digirr.fitdiet.repo
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.digirr.fitdiet.data.FoodProduct
 import com.digirr.fitdiet.data.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class FirebaseModel {
 
@@ -57,4 +59,55 @@ class FirebaseModel {
             }
         return value
     }
+
+    fun addFoodProduct(product : FoodProduct){
+        fbCloud.collection("foodProducts")
+            .document(product.id!!)
+            .set(product)
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "Dodano nowy produkt!")
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
+    fun uploadFoodImage(bytes: ByteArray){
+        fbStorage.getReference("foodProducts")
+            .child("$bytes.jpg")
+            .putBytes(bytes)
+            .addOnCompleteListener {
+                Log.d(REPO_DEBUG, "COMPLETE UPLOAD PHOTO")
+            }
+            .addOnSuccessListener {
+                getPhotoDownloadUrl(it.storage, bytes.toString())
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
+    private fun getPhotoDownloadUrl(storage: StorageReference, bytesName : String) {
+        storage.downloadUrl
+            .addOnSuccessListener {
+                updateProductPhoto(it.toString(), bytesName)
+                Log.d("SIEMA", it.toString())
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
+    private fun updateProductPhoto(url : String, bytesName: String) {
+        fbCloud.collection("foodProducts")
+            .document(bytesName)
+            .update("image", url)
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "UPDATE USER PHOTO!")
+            }
+            .addOnFailureListener{
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+    }
+
 }
