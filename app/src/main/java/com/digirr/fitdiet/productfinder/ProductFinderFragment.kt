@@ -13,17 +13,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.digirr.fitdiet.R
 import com.digirr.fitdiet.abstraction.AbstractFragment
 import com.digirr.fitdiet.data.FoodProduct
+import com.digirr.fitdiet.data.User
 import com.digirr.fitdiet.home.OnProductItemClick
 import com.digirr.fitdiet.home.ProductAdapter
 import com.digirr.fitdiet.registration.RegistrationViewModel
+import com.digirr.fitdiet.repo.FirebaseModel
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_product_finder.*
+import kotlinx.android.synthetic.main.fragment_product_finder.recyclerEatenProducts
+import kotlin.math.ceil
 
 
 class ProductFinderFragment : AbstractFragment(), OnProductItemClick {
 
     private val prodVM by viewModels<ProductFinderViewModel>()
     private val adapter = ProductAdapter(this)
-
+    private var currentUser : User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +52,9 @@ class ProductFinderFragment : AbstractFragment(), OnProductItemClick {
         prodVM.products.observe(viewLifecycleOwner, { list ->
             adapter.setProducts(list)
         })
+        prodVM.user.observe(viewLifecycleOwner, { user ->
+            currentUser = user
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,8 +66,28 @@ class ProductFinderFragment : AbstractFragment(), OnProductItemClick {
         }
     }
 
+    private fun addKcalToUserAccount(product: FoodProduct) {
+        var tempUser = currentUser
+
+        val tempKcal = tempUser?.eatenKcal?.plus(product.allKcal!!)
+        val tempProtein = tempUser?.eatenProtein?.plus(product.protein!!)
+        val tempCarbohydrates = tempUser?.eatenCarbohydrates?.plus(product.carbohydrates!!)
+        val tempFat = tempUser?.eatenFat?.plus(product.fat!!)
+
+        val kcalValues = mapOf(
+            "eatenKcal" to tempKcal,
+            "eatenProtein" to tempProtein,
+            "eatenCarbohydrates" to tempCarbohydrates,
+            "eatenFat" to tempFat
+        ) as Map<String, Any>
+
+        prodVM.updateProfileValues(kcalValues)
+    }
+
     override fun onProductLongClick(product: FoodProduct, position: Int) {
         prodVM.addEatenProduct(product)
+        addKcalToUserAccount(product)
+
         Toast.makeText(requireContext(), "Dodano spożyty produkt", Toast.LENGTH_SHORT).show()
     }
 

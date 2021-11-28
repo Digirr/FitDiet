@@ -36,6 +36,17 @@ class LoginFragment : AbstractFragment() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        isCurrentUser()
+    }
+
+    private fun isCurrentUser() {
+        fbAuth.currentUser?.let {
+            startMainViewApp()
+        }
+    }
+
     private fun setupLoginClick() {
         loginLogButton.setOnClickListener {
             val email = email_log_editText.text?.trim().toString()

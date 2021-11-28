@@ -15,6 +15,8 @@ import com.digirr.fitdiet.activities.AddProductActivity
 import com.digirr.fitdiet.data.FoodProduct
 import com.digirr.fitdiet.data.User
 import com.digirr.fitdiet.profile.ProfileViewModel
+import com.digirr.fitdiet.repo.FirebaseModel
+import kotlinx.android.synthetic.main.fragment_add_item.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -23,6 +25,7 @@ class HomeFragment : Fragment(), OnProductItemClick {
 
     private val homeVm by viewModels<HomeViewModel>()
     private val adapter = ProductAdapter(this)
+    private var currentUser : User? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +45,7 @@ class HomeFragment : Fragment(), OnProductItemClick {
         super.onActivityCreated(savedInstanceState)
         homeVm.user.observe(viewLifecycleOwner, { user ->
             bindUserData(user)
+            currentUser = user
         })
         homeVm.eatenProducts.observe(viewLifecycleOwner, { list ->
             adapter.setProducts(list)
@@ -66,9 +70,35 @@ class HomeFragment : Fragment(), OnProductItemClick {
         maxFat.text = user.maxFat.toString()
     }
 
+    private fun removeKcalFromUserAccount(product: FoodProduct) {
+        var tempUser = currentUser
+
+        val tempKcal = tempUser?.eatenKcal?.minus(product.allKcal!!)
+        val tempProtein = tempUser?.eatenProtein?.minus(product.protein!!)
+        val tempCarbohydrates = tempUser?.eatenCarbohydrates?.minus(product.carbohydrates!!)
+        val tempFat = tempUser?.eatenFat?.minus(product.fat!!)
+
+        currentKcal.text = tempKcal.toString()
+        currentProtein.text = tempProtein.toString()
+        currentCarbohydrates.text = tempCarbohydrates.toString()
+        currentFat.text = tempFat.toString()
+
+        val kcalValues = mapOf(
+            "eatenKcal" to tempKcal,
+            "eatenProtein" to tempProtein,
+            "eatenCarbohydrates" to tempCarbohydrates,
+            "eatenFat" to tempFat
+        ) as Map<String, Any>
+
+        homeVm.updateProfileValues(kcalValues)
+    }
+
     override fun onProductLongClick(product: FoodProduct, position: Int) {
         homeVm.removeEatenProduct(product)
         adapter.removeProduct(product, position)
+
+        removeKcalFromUserAccount(product)
+
         Toast.makeText(requireContext(), "Usunięto z listy spożytych produktów", Toast.LENGTH_SHORT).show()
     }
 

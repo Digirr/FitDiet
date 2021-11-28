@@ -21,4 +21,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         fbRepo.removeEatenProduct(product)
     }
 
+    fun updateProfileValues(map: Map<String, Any>) {
+        fbRepo.updateProfileValues(map)
+    }
+
 }
