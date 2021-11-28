@@ -61,6 +61,30 @@
             android:textSize="20dp" />
 
         <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/weight_value_plus" />
+
+        <EditText
+            android:id="@+id/weightET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/bree_serif"
+            android:hint="@string/weightItem"
+            android:inputType="phone"
+            android:textColor="@color/grey"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -129,7 +153,7 @@
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/bree_serif"
             android:hint="@string/carbohydrates"
-            android:inputType="text"
+            android:inputType="phone"
             android:textColor="@color/grey"
             android:textSize="20dp" />
 
@@ -152,7 +176,7 @@
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/bree_serif"
             android:hint="@string/fat"
-            android:inputType="text"
+            android:inputType="phone"
             android:textColor="@color/grey"
             android:textSize="20dp" />
 

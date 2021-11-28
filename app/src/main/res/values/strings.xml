@@ -71,11 +71,10 @@
     <string name="calories_empty_or_incorrect">Pole z kaloriami puste lub nieprawidłowe</string>
     <string name="proteins_empty_or_incorrect">Pole z białkiem puste lub nieprawidłowe</string>
     <string name="carbohydrates_empty_or_incorrect">Węglowodany puste lub nieprawidłowe</string>
+    <string name="weight_empty_or_incorrect">Wartość podanej gramatury jest pusta nieprawidłowa</string>
     <string name="fat_empty_or_incorrect">Tłuszcze puste lub nieprawidłowe</string>
     <string name="product_or_incorrect">Produkt dodany pomyslnie</string>
     <string name="values_format_incorrect">Format wprowadzanych liczb nieprawidłowy</string>
-
-
 
 
     <!-- Home view -->
@@ -85,6 +84,9 @@
     <string name="protein_row">Białko:   </string>
     <string name="carbohydrates_row">Węglowodany:   </string>
     <string name="fat_row">Tłuszcze:   </string>
+    <string name="weight_value">Waga:   </string>
+    <string name="weight_value_plus">Waga w gramach:   </string>
+
 
     <!-- Add new product -->
     <string name="add_description">Wprowadź opis</string>
@@ -93,6 +95,7 @@
     <string name="addButtonText">+</string>
     <string name="addProductButton">Dodaj produkt</string>
     <string name="kcal">Kcal</string>
+    <string name="weightItem">Waga</string>
     <string name="protein">Białko</string>
     <string name="carbohydrates">Węglowodany</string>
     <string name="fat">Tłuszcze</string>

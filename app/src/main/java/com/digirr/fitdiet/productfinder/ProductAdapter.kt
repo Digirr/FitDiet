@@ -42,6 +42,7 @@ class ProductAdapter(private val listener: OnProductItemClick) : RecyclerView.Ad
 
     private fun bindData(holder : ProductViewHolder) {
         val topic = holder.itemView.findViewById<TextView>(R.id.topicItem)
+        val weight = holder.itemView.findViewById<TextView>(R.id.weightItem)
         val allKcal = holder.itemView.findViewById<TextView>(R.id.allKcalItem)
         val carbohydrates = holder.itemView.findViewById<TextView>(R.id.carbohydratesItem)
         val protein = holder.itemView.findViewById<TextView>(R.id.proteinItem)
@@ -49,6 +50,7 @@ class ProductAdapter(private val listener: OnProductItemClick) : RecyclerView.Ad
         val image = holder.itemView.findViewById<ImageView>(R.id.productImage)
 
         topic.text = "  " + productsList[holder.adapterPosition].productName
+        weight.text = (weight.text.toString() + " " + productsList[holder.adapterPosition].weight) + " g"
         allKcal.text = (allKcal.text.toString() + " " + productsList[holder.adapterPosition].allKcal)
         carbohydrates.text = (carbohydrates.text.toString() + " " + productsList[holder.adapterPosition].carbohydrates)
         protein.text = (protein.text.toString() + " " + productsList[holder.adapterPosition].protein)

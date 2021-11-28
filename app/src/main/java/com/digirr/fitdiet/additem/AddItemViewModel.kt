@@ -25,15 +25,14 @@ import kotlin.random.Random
 class AddItemViewModel(application: Application) : AndroidViewModel(application) {
 
     private val fbRepo = FirebaseModel()
-    private val fbAuth = FirebaseAuth.getInstance()
     val id = key_generator()
     var byteArray : ByteArray? = null
 
-    fun addProduct(product : FoodProduct) {
+    private fun addProduct(product : FoodProduct) {
         fbRepo.addFoodProduct(product)
     }
 
-    fun uploadProductImage(bytes: ByteArray){
+    private fun uploadProductImage(bytes: ByteArray){
         fbRepo.uploadFoodImage(bytes)
     }
 
@@ -41,6 +40,7 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
         titleAddET : EditText,
         addDescriptionET: EditText,
         allKcalET : EditText,
+        weightET : EditText,
         proteinET : EditText,
         carbohydratesET : EditText,
         fatET : EditText,
@@ -49,15 +49,16 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
         val title = titleAddET.text.toString()
         val description = addDescriptionET.text.toString()
 
-        try {
+            try {
             val allKcal = Integer.parseInt(allKcalET.text.toString())
             val protein = Integer.parseInt(proteinET.text.toString())
             val carbohydrates = Integer.parseInt(carbohydratesET.text.toString())
             val fat = Integer.parseInt(fatET.text.toString())
+            val weight = Integer.parseInt(weightET.text.toString())
 
-            if(validData(title, description, allKcal, protein, carbohydrates, fat, productSingleImage)) {
+            if(validData(title, description, allKcal, weight, protein, carbohydrates, fat, productSingleImage)) {
                 val foodProduct = FoodProduct(
-                    byteArray.toString(), "", title, description, allKcal, protein, carbohydrates, fat
+                    byteArray.toString(), "", title, description, allKcal, weight, protein, carbohydrates, fat
                 )
                 addProduct(foodProduct)
                 uploadProductImage(byteArray!!)
@@ -70,7 +71,7 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
         return false
     }
 
-    private fun validData(title: String, description: String, allKcal : Int, protein : Int, carbohydrates : Int, fat : Int, productSingleImage: ImageView) : Boolean {
+    private fun validData(title: String, description: String, allKcal : Int, weight : Int, protein : Int, carbohydrates : Int, fat : Int, productSingleImage: ImageView) : Boolean {
         if(productSingleImage.drawable == null){
             showToast(getStringFromResources(R.string.add_image_validator))
             return false
@@ -79,6 +80,9 @@ class AddItemViewModel(application: Application) : AndroidViewModel(application)
             return false
         } else if(description.isEmpty() || description.length > 300) {
             showToast(getStringFromResources(R.string.text_too_long))
+            return false
+        } else if(weight.toString().isEmpty() || weight > 999999){
+            showToast(getStringFromResources(R.string.weight_empty_or_incorrect))
             return false
         } else if(allKcal.toString().isEmpty() || allKcal > 9999){
             showToast(getStringFromResources(R.string.calories_empty_or_incorrect))

@@ -6,6 +6,7 @@ data class FoodProduct(
     val productName: String? = null,
     val description: String? = null,
     val allKcal: Int? = null,
+    val weight: Int? = null,
     val protein: Int? = null,
     val carbohydrates: Int? = null,
     val fat: Int? = null)

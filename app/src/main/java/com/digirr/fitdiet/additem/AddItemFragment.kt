@@ -53,7 +53,7 @@ class AddItemFragment : AbstractFragment() {
             startActivityForResult(gallery, RESULT_LOAD_IMAGE)
         }
         addProductButton.setOnClickListener {
-            var returnValue = addVm.addProductUserClick(titleAddET, addDescriptionET, allKcalET, proteinET, carbohydratesET, fatET, productSingleImage)
+            var returnValue = addVm.addProductUserClick(titleAddET, addDescriptionET, allKcalET, weightET, proteinET, carbohydratesET, fatET, productSingleImage)
             if(returnValue) {
                 startMainViewApp()
             }

@@ -30,6 +30,20 @@
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
+            android:id="@+id/weightItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight_value"
+            android:textColor="#0272A6"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/allKcalItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/productImage" />
+
+        <TextView
             android:id="@+id/proteinItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,8 +84,8 @@
 
         <TextView
             android:id="@+id/topicItem"
-            android:layout_width="214dp"
-            android:layout_height="53dp"
+            android:layout_width="218dp"
+            android:layout_height="36dp"
             android:text="@string/title_row"
             android:textColor="@color/light_black"
             android:textSize="@dimen/title_textSize"
