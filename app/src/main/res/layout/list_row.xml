@@ -26,21 +26,21 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/proteinItem"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
             android:id="@+id/weightItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:text="@string/weight_value"
             android:textColor="#0272A6"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/allKcalItem"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/carbohydratesItem"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/fatItem"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
         <ImageView
@@ -91,23 +91,22 @@
             android:textSize="@dimen/title_textSize"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.611"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/fatItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             android:text="@string/fat_row"
             android:textColor="#0272A6"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/productImage" />
 
 

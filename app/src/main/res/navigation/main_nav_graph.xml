@@ -11,17 +11,12 @@
         android:name="com.digirr.fitdiet.home.HomeFragment"
         android:label="HomeFragment">
         <action
-            android:id="@+id/action_homeFragment_to_statsFragment"
-            app:destination="@id/statsFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_info2"
+            app:destination="@id/infoFragment" />
     </fragment>
-    <fragment
-        tools:layout="@layout/fragment_stats"
-        android:id="@+id/statsFragment"
-        android:name="com.digirr.fitdiet.stats.StatsFragment"
-        android:label="fragment_stats" />
     <fragment
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
@@ -36,4 +31,9 @@
         android:name="com.digirr.fitdiet.calculator.CalculatorFragment"
         android:label="fragment_calculator"
         tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.digirr.fitdiet.info.Info"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
 </navigation>

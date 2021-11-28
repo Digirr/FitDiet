@@ -50,11 +50,11 @@ class ProductAdapter(private val listener: OnProductItemClick) : RecyclerView.Ad
         val image = holder.itemView.findViewById<ImageView>(R.id.productImage)
 
         topic.text = "  " + productsList[holder.adapterPosition].productName
-        weight.text = (weight.text.toString() + " " + productsList[holder.adapterPosition].weight) + " g"
-        allKcal.text = (allKcal.text.toString() + " " + productsList[holder.adapterPosition].allKcal)
-        carbohydrates.text = (carbohydrates.text.toString() + " " + productsList[holder.adapterPosition].carbohydrates)
-        protein.text = (protein.text.toString() + " " + productsList[holder.adapterPosition].protein)
-        fat.text = (fat.text.toString() + " " + productsList[holder.adapterPosition].fat)
+        weight.text = "  " + (weight.text.toString() + " " + productsList[holder.adapterPosition].weight) + " g"
+        allKcal.text = "  " + (allKcal.text.toString() + " " + productsList[holder.adapterPosition].allKcal)
+        carbohydrates.text = "  " + (carbohydrates.text.toString() + " " + productsList[holder.adapterPosition].carbohydrates)
+        protein.text = "  " + (protein.text.toString() + " " + productsList[holder.adapterPosition].protein)
+        fat.text = "  " + (fat.text.toString() + " " + productsList[holder.adapterPosition].fat)
 
         //HTTP: Glide
         Glide.with(holder.itemView)
