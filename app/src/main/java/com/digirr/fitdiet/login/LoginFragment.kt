@@ -38,7 +38,7 @@ class LoginFragment : AbstractFragment() {
 
     override fun onStart() {
         super.onStart()
-        isCurrentUser()
+        //isCurrentUser()
     }
 
     private fun isCurrentUser() {
