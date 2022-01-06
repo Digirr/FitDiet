@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.digirr.fitdiet.R
 
-class Info : Fragment() {
+class InfoFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
