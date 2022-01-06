@@ -4,175 +4,173 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#c6eef5"
     tools:context=".calculator.CalculatorFragment"
-    android:background="#c6eef5">
+    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/calculatorTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculator"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textSize="@dimen/titleTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/giveDataTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/giveData"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/genderTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:text="@string/gender"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/calculatorTV"
+        <RadioGroup
+            android:id="@+id/genderRG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/womenRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calculator"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/black"
-                android:textSize="@dimen/titleTextSize"
-                android:textStyle="bold" />
+                android:layout_marginHorizontal="5dp"
+                android:checked="true"
+                android:text="@string/female" />
 
-            <TextView
-                android:id="@+id/giveDataTV"
+            <RadioButton
+                android:id="@+id/manRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="@string/giveData"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
+                android:checked="false"
+                android:text="@string/male" />
+        </RadioGroup>
 
-            <TextView
-                android:id="@+id/genderTV"
+        <TextView
+            android:id="@+id/ageTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/age"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ageET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/giveAge"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/heightTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/height"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/heightET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/giveHeight"
+            android:inputType="phone"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/weightTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/giveWeightET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/giveWeight"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/activityLvlTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/activityLvl"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerActivityLvl"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/goalTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/goal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeTextSize"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:background="@color/white" />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bigMargin">
+
+            <Button
+                android:id="@+id/saveCalculatorDataButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/gender"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/view_big_margin"
+                android:text="@string/save" />
+        </RelativeLayout>
 
-            <RadioGroup
-                android:id="@+id/genderRG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/womenRB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:checked="true"
-                    android:text="@string/female" />
-
-                <RadioButton
-                    android:id="@+id/manRB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="@string/male" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/ageTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/age"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/ageET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/giveAge"
-                android:inputType="phone" />
-
-            <TextView
-                android:id="@+id/heightTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/height"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/heightET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/giveHeight"
-                android:inputType="phone"
-                android:text="" />
-
-            <TextView
-                android:id="@+id/weightTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/weight"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/giveWeightET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/giveWeight"
-                android:inputType="phone" />
-
-            <TextView
-                android:id="@+id/activityLvlTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/activityLvl"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/spinnerActivityLvl"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="@dimen/smallMargin"
-                android:background="@color/white"/>
-
-            <TextView
-                android:id="@+id/goalTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/goal"
-                android:textColor="@color/black"
-                android:textSize="@dimen/largeTextSize"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/spinnerGoal"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="@dimen/smallMargin"
-                android:background="@color/white" />
-
-
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/RelativeLayout01"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/bigMargin">
-
-                <Button
-                    android:id="@+id/saveCalculatorDataButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginBottom="@dimen/view_big_margin"
-                    android:text="@string/save" />
-            </RelativeLayout>
-
-        </LinearLayout>
+    </LinearLayout>
 </ScrollView>
