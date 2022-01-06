@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_screenLoadFragment_to_login"
             app:destination="@id/login" />
-        <action
-            android:id="@+id/action_screenLoadFragment_to_calculator"
-            app:destination="@id/calculator" />
     </fragment>
     <fragment
         android:id="@+id/login"
